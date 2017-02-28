@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="COMP3702/7702" default="all">
+    <target name="clean">
+        <delete dir="build"/>
+        <!-- COMP7702 students change below line -->
+        <delete file="a2-3702.jar"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
+
+    <target name="all" depends="compile">
+        <jar destfile="./a2-3702.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="solver.Runner"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
